@@ -15,8 +15,7 @@
 '''
 
 def speak(text):
-    print("----------------",text)
-    return ai_aanroepen("Wat is frankrijk" , "abc")
+    return ai_aanroepen(text , "abc")
 
 def ai_aanroepen(invoer_op_scherm, api_key_p):
     import os

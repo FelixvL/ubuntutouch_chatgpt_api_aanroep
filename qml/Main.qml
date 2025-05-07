@@ -39,17 +39,48 @@ MainView {
         }
 
         Label {
+            id: textInMidden
+
+            wrapMode: Text.WordWrap
+            
             anchors {
                 top: header.bottom
                 left: parent.left
                 right: parent.right
                 bottom: parent.bottom
             }
-            text: i18n.tr('Check the logs!')
+            text: i18n.tr('Bouw je boodschappenlijstje')
 
             verticalAlignment: Label.AlignVCenter
             horizontalAlignment: Label.AlignHCenter
+
+            TextField{
+                id: mijnInvoer
+                anchors.left: parent.left
+                
+            }
+            
         }
+        Button{
+                id: button
+                text:"AddItem"
+                color:"red"
+
+                onClicked: {
+                    var de_vraag = mijnInvoer.text;
+                    python.call('example.speak', [de_vraag], function(returnValue) {
+                    console.log('example.speak returned ' + returnValue);
+                    textInMidden.text = returnValue;
+                })
+                }
+
+                anchors {
+                    top: header.bottom
+                    right: parent.right
+                }
+                anchors.rightMargin: units.gu(2)
+
+            }
     }
 
     Python {
@@ -61,9 +92,9 @@ MainView {
 
             importModule('example', function() {
                 console.log('module imported');
-                python.call('example.speak', ['Hello World!'], function(returnValue) {
-                    console.log('example.speak returned ' + returnValue);
-                })
+                // python.call('example.speak', ['Hello World!'], function(returnValue) {
+                //     console.log('example.speak returned ' + returnValue);
+                // })
             });
         }
 
