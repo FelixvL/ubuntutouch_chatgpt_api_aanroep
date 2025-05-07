@@ -1,0 +1,21 @@
+clickable_minimum_required: 8.0.0
+builder: pure-qml-cmake
+kill: qmlscene
+prebuild:
+  - bash ${SRC_DIR}/setup_venv.sh
+dependencies_host:
+  - python3-venv
+install_lib:
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/openai
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/distro
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/h11
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/jiter
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/anyio
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/exceptiongroup
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/httpx
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/httpcore
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/pydantic
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/pydantic_core
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/sniffio
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/annotated_types
+  - ${BUILD_DIR}/venv/lib/python3.8/site-packages/typing_extensions.py

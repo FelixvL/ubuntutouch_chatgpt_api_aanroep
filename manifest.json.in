@@ -1,0 +1,15 @@
+{
+    "name": "chatgptapitrial.fts",
+    "description": "chatgptapitrial",
+    "architecture": "@CLICK_ARCH@",
+    "title": "chatgptapitrial",
+    "hooks": {
+        "chatgptapitrial": {
+            "apparmor": "chatgptapitrial.apparmor",
+            "desktop":  "chatgptapitrial.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "fts <fts@fts.nl>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
